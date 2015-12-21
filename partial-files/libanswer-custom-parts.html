@@ -1,0 +1,59 @@
+<!-- Custom JS/CSS section -->
+<style type="text/css" media="screen">@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/jjamerson_screen.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-classes.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-content-blocks.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-follow-site.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-join-us.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-menu-menu-campus-tools.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-menu.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-search-form.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-social-bar.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-system-main-menu.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-user-login-logout.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/content-types/book.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/content-types/forms_downloads.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/content-types/page.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/content-types/user.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/content-types/webform.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/general/content-slideshow.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/general/forms.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/general/general.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/general/icons.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/general/overlay.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/general/sliders.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/general/tables.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/content-regions.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/emergency-bar.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/footer.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/header.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/offscreen-regions.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/sidebar-regions.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/stripes.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/top_navigation_bar.css");@import url("//library-stage.berklee.edu/sites/all/themes/jjamerson_lb/stylesheets/jjamerson_lb_screen.css");
+	#s-la-bc{margin-top: 18px;}
+</style>
+
+<script type="text/javascript">
+	var $bcm_container=$("<div />"),$bcm_domain="//library-stage.berklee.edu",$bcm_header="#bcm-libanswer-header",$bcm_footer="#bcm-libanswer-footer";
+
+	jQuery(document).ready(function($){
+		$bcm_container.load($bcm_domain+" section", function(){
+			$bcm_container.html(function(index,html){
+				return html.replace(new RegExp('f="/','g'),'f="'+$bcm_domain+'/');
+			});
+			$bcm_container.html(function(index,html){
+				return html.replace(new RegExp('c="/sites','g'),'c="'+$bcm_domain+'/sites');
+			});
+			var $offscreen=$bcm_container.find("#off-screen"),$topnav=$bcm_container.find(".region-top-nav"),$header=$bcm_container.find(".region-header"),$footer=$bcm_container.find(".region-footer");
+			$topnav.find("#block-menu-menu-login-menu").remove();
+			$topnav.find("#block-search-api-page-search-site").remove();
+			$offscreen.find("#off-screen-sidebar").append($bcm_container.find('section.region-off-screen-sidebar'));
+			$("#s-la-public-footer").remove();
+			$($bcm_header).append($topnav, $header, $offscreen);
+			$($bcm_header+" .region-header .container").css("width","90%");
+			$($bcm_header+" .region-header .container a i").css("color","90%");
+			$($bcm_footer).append($footer);
+			$($bcm_footer+" .footer-menus .content p").css("text-align","center");
+			$footer.css("position", "absolute");
+			$footer.css("bottom", "0");
+			$footer.css("width", "100%");
+
+
+			$.getScript($bcm_domain+"/sites/all/themes/jjamerson_lb/js/jjamerson_lb.min.js", function(data, textStatus, jqxhr){console.log( textStatus );});
+		});
+	});
+</script>
+<!-- END Custom JS/CSS section -->
+
+
+
+
+
+
+<!-- Custom Header Code section -->
+<div id="bcm-libanswer-header"></div>
+<!-- END Custom Header Code section -->
+
+
+
+
+
+
+
+<!-- Custom Footer Code section -->
+<div id="bcm-libanswer-footer"></div>
+<!-- END Custom Header Code section -->
+
+
+
+
