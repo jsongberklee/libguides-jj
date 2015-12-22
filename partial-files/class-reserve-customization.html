@@ -1,0 +1,97 @@
+<?php //<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<?php include_http_metas() ?>
+<?php include_metas() ?>
+
+<?php include_title() ?>
+
+<link rel="shortcut icon" href="/favicon.ico" />
+
+<!-- Custom JS/CSS for Header/Footer section -->
+<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" media="all">
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<style type="text/css" media="screen">
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/jjamerson_screen.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-classes.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-content-blocks.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-follow-site.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-join-us.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-menu-menu-campus-tools.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-menu.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-search-form.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-social-bar.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-system-main-menu.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/blocks/block-user-login-logout.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/content-types/book.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/content-types/forms_downloads.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/content-types/page.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/content-types/user.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/content-types/webform.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/general/content-slideshow.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/general/forms.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/general/general.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/general/icons.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/general/overlay.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/general/sliders.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/general/tables.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/content-regions.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/emergency-bar.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/footer.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/header.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/offscreen-regions.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/sidebar-regions.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/stripes.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson/stylesheets/regions/top_navigation_bar.css");
+	@import url("https://library.berklee.edu/sites/all/themes/jjamerson_lb/stylesheets/jjamerson_lb_screen.css");
+	.region-top-nav>.container{padding-top:0;text-align:center;}
+	div#faculty_select_box_container,div#course_select_box_container{float:none;margin-left:0; display:inline-block; width: 49%;}
+</style>
+<script type="text/javascript">
+	var $bcm_container=$("<div />"),$bcm_domain="https://library-stage.berklee.edu",$bcm_header="#bcm-classreserve-header",$bcm_footer="#bcm-classreserve-footer";
+
+	jQuery(document).ready(function($){
+		$bcm_container.load($bcm_domain+" section", function(){
+			$bcm_container.html(function(index,html){
+				return html.replace(new RegExp('f="/','g'),'f="'+$bcm_domain+'/');
+			});
+			$bcm_container.html(function(index,html){
+				return html.replace(new RegExp('c="/sites','g'),'c="'+$bcm_domain+'/sites');
+			});
+			var $offscreen=$bcm_container.find("#off-screen"),$topnav=$bcm_container.find(".region-top-nav"),$header=$bcm_container.find(".region-header"),$footer=$bcm_container.find(".region-footer");
+			$topnav.find("#block-menu-menu-menu-login-menu").remove();
+			$topnav.find("#block-search-api-page-search-site").remove();
+			$offscreen.find("#off-screen-sidebar").append($bcm_container.find('section.region-off-screen-sidebar'));
+			$($bcm_header).append($topnav, $header, $offscreen);
+			$($bcm_header+" .region-header .container").css("width","90%");
+			$($bcm_header+" .region-header .container a i").css("color","90%");
+			$($bcm_footer).append($footer);
+			$($bcm_footer+" .footer-menus .content p").css("text-align","center");
+			//$footer.css("position", "absolute");
+			//$footer.css("bottom", "0");
+			$footer.css("width", "100%");
+			$.getScript($bcm_domain+"/sites/all/themes/jjamerson_lb/js/jjamerson_lb.min.js", function(data, textStatus, jqxhr){console.log( textStatus );});
+		});
+	});
+</script>
+<!-- END Custom JS/CSS section -->
+
+</head>
+<body>
+<div id="bcm-classreserve-header"></div>
+	<center>
+		<table cellspacing="0" cellpadding="0" class="site_enclosure">
+			<tr>
+				<td class="body_classReserves">
+					<div class="container">
+					<?php echo $sf_data->getRaw('sf_content') ?>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</center>
+<div id="bcm-classreserve-footer"></div>
+<?php include_partial('global/googleAnalytics'); // for production server only ?>
+</body>
+</html>
